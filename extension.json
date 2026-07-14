@@ -1,0 +1,38 @@
+{
+  "name": "ArticleFeedback",
+  "version": "1.0.0",
+  "author": "[https://github.com/codedbyjake Jake Linford]",
+  "url": "https://github.com/Consumer-Rights-Wiki-Org/ArticleFeedback",
+  "description": "Adds a \"Give feedback\" tab to article pages, posting reader feedback to a Discord webhook.",
+  "license-name": "MIT",
+  "type": "other",
+
+  "manifest_version": 2,
+
+  "AutoloadNamespaces": {
+    "MediaWiki\\Extension\\ArticleFeedback\\": "includes/"
+  },
+
+  "APIModules": {
+    "articlefeedback": "MediaWiki\\Extension\\ArticleFeedback\\ApiArticleFeedback"
+  },
+
+  "RateLimits": {
+    "articlefeedback": {
+      "ip": [ 3, 300 ],
+      "newbie": [ 3, 300 ],
+      "user": [ 6, 300 ]
+    }
+  },
+
+  "Hooks": {
+    "SkinTemplateNavigation::Universal": "MediaWiki\\Extension\\ArticleFeedback\\Hooks::onSkinTemplateNavigation__Universal",
+    "BeforePageDisplay": "MediaWiki\\Extension\\ArticleFeedback\\Hooks::onBeforePageDisplay"
+  },
+
+  "MessagesDirs": {
+    "ArticleFeedback": [
+      "i18n"
+    ]
+  }
+}
