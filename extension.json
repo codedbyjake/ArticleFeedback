@@ -2,7 +2,7 @@
   "name": "ArticleFeedback",
   "version": "1.0.0",
   "author": "[https://github.com/codedbyjake Jake Linford]",
-  "url": "https://github.com/Consumer-Rights-Wiki-Org/ArticleFeedback",
+  "url": "https://github.com/codedbyjake/ArticleFeedback",
   "description": "Adds a \"Give feedback\" tab to article pages, posting reader feedback to a Discord webhook.",
   "license-name": "MIT",
   "type": "other",
