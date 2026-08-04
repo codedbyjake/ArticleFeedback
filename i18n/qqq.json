@@ -1,0 +1,9 @@
+{
+    "@metadata": {
+        "authors": ["codedbyjake"]
+    },
+    "articlefeedback-botname": "Username of the account that posts feedback to article talk pages. Account is auto-created and added to the bot group on first use if it doesn't already exist.",
+    "articlefeedback-talk-heading": "Heading for the new talk-page section created per feedback submission. $1 is a wikitext link to the submitter's user page, or a fixed string for anonymous submissions.",
+    "articlefeedback-talk-body": "Body of the new talk-page section. $1 is the submitted feedback text.",
+    "articlefeedback-talk-summary": "Edit summary used for the bot's talk-page edit."
+}

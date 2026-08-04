@@ -1,0 +1,9 @@
+{
+    "@metadata": {
+        "authors": ["codedbyjake"]
+    },
+    "articlefeedback-botname": "ArticleFeedback",
+    "articlefeedback-talk-heading": "Feedback from $1",
+    "articlefeedback-talk-body": "$1\n\n''(Submitted via the article feedback button.)'' ~~~~",
+    "articlefeedback-talk-summary": "New article feedback"
+}
