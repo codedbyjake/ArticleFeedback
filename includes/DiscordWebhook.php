@@ -5,6 +5,8 @@ namespace MediaWiki\Extension\ArticleFeedback;
 class DiscordWebhook {
 
     public static function send( string $url, array $payload ): void {
+        $payload['allowed_mentions'] = [ 'parse' => [] ];
+
         $json = json_encode( $payload, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
 
         $ch = curl_init( $url );
