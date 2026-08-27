@@ -30,7 +30,7 @@ class ApiArticleFeedback extends ApiBase {
 
         $params = $this->extractRequestParams();
         $title = Title::newFromText( $params['title'] );
-        if ( !$title || !$title->exists() ) {
+        if ( !$title || !$title->exists() || !$title->inNamespace( NS_MAIN ) ) {
             $this->dieWithError( 'apierror-missingtitle' );
         }
 
@@ -86,9 +86,6 @@ class ApiArticleFeedback extends ApiBase {
         $heading = $this->msg( 'articlefeedback-talk-heading', $whoWikitext )->inContentLanguage()->plain();
         $rawBody = $this->msg( 'articlefeedback-talk-body', wfEscapeWikiText( $text ) )->inContentLanguage()->plain();
 
-        // Expand the ~~~~ in the message into a real signature, the same way MediaWiki
-        // does for a normal edit. DiscussionTools only recognises a section as a
-        // threaded comment (reply button, comment count, etc.) if it ends in one.
         $parser = MediaWikiServices::getInstance()->getParserFactory()->getInstance();
         $parserOptions = ParserOptions::newFromUser( $botUser );
         $body = $parser->preSaveTransform( $rawBody, $talkTitle, $botUser, $parserOptions );
